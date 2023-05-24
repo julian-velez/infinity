@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 270px;
+}
+
+.fold-container {
+    perspective: 800px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .fold {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    animation: fold 4s infinite alternate;
+  }
+  
+  .fold-front,
+  .fold-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcc00;
+    backface-visibility: hidden;
+  }
+  
+  .fold-back {
+    transform: rotateX(-180deg);
+  }
+  
+  @keyframes fold {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(-180deg);
+    }
+  }
+  
